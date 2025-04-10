@@ -8,7 +8,7 @@ public class BigVigenere {
 
     public BigVigenere() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese la clave numérica: ");
+        System.out.print("Ingresar su clave numérica: ");
         String numericKey = scanner.nextLine();
         this.key = convertKey(numericKey);
         generateAlphabet();
@@ -78,21 +78,21 @@ public class BigVigenere {
 
     public void reEncrypt() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Ingrese el mensaje encriptado: ");
+        System.out.print("Ingrese mensaje encriptado: ");
         String encryptedMessage = scanner.nextLine();
         String decryptedMessage = decrypt(encryptedMessage);
 
-        System.out.print("Ingrese la nueva clave numérica: ");
+        System.out.print("Ingrese nueva clave numérica: ");
         String newKey = scanner.nextLine();
         this.key = convertKey(newKey);
 
         String newEncrypted = encrypt(decryptedMessage);
-        System.out.println("Nuevo mensaje encriptado: " + newEncrypted);
+        System.out.println("Mensaje encriptado: " + newEncrypted);
     }
 
     public char search(int position) {
         if (position < 0 || position >= ALPHABET_SIZE * ALPHABET_SIZE) {
-            throw new IllegalArgumentException("Posición fuera de rango");
+            throw new IllegalArgumentException("La posición está fuera del rango.");
         }
         int row = position / ALPHABET_SIZE;
         int col = position % ALPHABET_SIZE;
@@ -101,7 +101,7 @@ public class BigVigenere {
     
     public char optimalSearch(int position) {
     if (position < 0 || position >= ALPHABET_SIZE * ALPHABET_SIZE) {
-        throw new IllegalArgumentException("Posición fuera de rango");
+        throw new IllegalArgumentException("La posición fuera del rango.");
     }
     int row = position / ALPHABET_SIZE;
     int col = position % ALPHABET_SIZE;
